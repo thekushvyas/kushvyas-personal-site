@@ -3,6 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 import { PROFILE } from "./data";
 import Nav from "./components/Nav";
+import SmoothScroll from "./components/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "Kush Vyas — MSBA @ Boston University",
@@ -17,29 +18,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased text-black">
-        <div className="mx-auto flex min-h-screen w-full max-w-2xl flex-col px-6 py-10 md:py-14">
-          {/* Site header — shown on every page */}
-          <header className="flex flex-col gap-4 border-b border-blue-100 pb-6">
-            <div className="flex flex-col gap-1">
-              <Link
-                href="/"
-                className="text-2xl font-semibold tracking-tight text-black hover:text-blue-700"
-              >
-                {PROFILE.name}
-              </Link>
-              <p className="text-sm text-black/70">
-                {PROFILE.headline} · {PROFILE.location}
-              </p>
-            </div>
+      <body className="font-sans text-black antialiased">
+        <SmoothScroll />
+
+        {/* Floating top bar — minimal KV mark + nav */}
+        <header className="sticky top-0 z-50 backdrop-blur-md">
+          <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-4">
+            <Link
+              href="/"
+              aria-label="Home"
+              className="grid h-9 w-9 place-items-center rounded-full bg-blue-600 text-sm font-semibold text-white shadow-md hover:bg-blue-700"
+            >
+              KV
+            </Link>
             <Nav />
-          </header>
+          </div>
+        </header>
 
-          {/* Page content */}
-          <main className="flex-1 py-10">{children}</main>
+        <div className="mx-auto w-full max-w-5xl px-6">
+          <main className="min-h-[60vh]">{children}</main>
 
-          {/* Footer */}
-          <footer className="border-t border-blue-100 pt-6 text-xs text-black/50">
+          <footer className="mt-16 border-t border-blue-100 py-6 text-xs text-black/50">
             © {new Date().getFullYear()} {PROFILE.name}. Built with Next.js,
             deployed on Vercel.
           </footer>
