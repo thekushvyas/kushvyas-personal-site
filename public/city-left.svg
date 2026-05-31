@@ -1,28 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 720" preserveAspectRatio="xMinYMax meet" width="320" height="720">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 760" preserveAspectRatio="xMinYMax meet" width="360" height="760">
   <defs>
-    <linearGradient id="cl" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#aecaff"/>
-      <stop offset="1" stop-color="#5d86ec"/>
+    <linearGradient id="clBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c4d5f7" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#9bb6f0" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="clFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9eb9f3"/>
+      <stop offset="1" stop-color="#4d76e0"/>
     </linearGradient>
   </defs>
-  <g fill="url(#cl)">
-    <!-- tallest near the outer (left) edge, stepping down toward the center -->
-    <rect x="0"   y="150" width="62" height="570"/>
-    <rect x="64"  y="120" width="14" height="600"/>
-    <rect x="66"  y="230" width="48" height="490"/>
-    <rect x="118" y="190" width="52" height="530"/>
-    <rect x="174" y="300" width="44" height="420"/>
-    <rect x="222" y="260" width="50" height="460"/>
-    <rect x="276" y="360" width="44" height="360"/>
+
+  <!-- Distant back skyline (lighter, set back) -->
+  <g fill="url(#clBack)">
+    <rect x="0"   y="260" width="80"  height="500"/>
+    <rect x="78"  y="220" width="60"  height="540"/>
+    <rect x="136" y="290" width="68"  height="470"/>
+    <rect x="200" y="250" width="64"  height="510"/>
+    <rect x="262" y="320" width="62"  height="440"/>
+    <rect x="320" y="290" width="40"  height="470"/>
   </g>
-  <!-- a few lit windows -->
-  <g fill="#eaf2ff" opacity="0.6">
-    <rect x="14" y="190" width="8" height="10"/>
-    <rect x="34" y="190" width="8" height="10"/>
-    <rect x="14" y="240" width="8" height="10"/>
-    <rect x="34" y="240" width="8" height="10"/>
-    <rect x="128" y="230" width="8" height="10"/>
-    <rect x="146" y="230" width="8" height="10"/>
-    <rect x="232" y="300" width="8" height="10"/>
+
+  <!-- Foreground skyline (sharper, darker, with windows) -->
+  <g fill="url(#clFront)">
+    <!-- tall slab anchored to outer (left) edge -->
+    <rect x="0"   y="170" width="68" height="590"/>
+    <!-- antenna spire -->
+    <rect x="30"  y="120" width="8"  height="60"/>
+    <!-- mid tower with stepped roof -->
+    <rect x="74"  y="250" width="52" height="510"/>
+    <polygon points="74,250 100,232 126,250"/>
+    <!-- midblock -->
+    <rect x="132" y="320" width="46" height="440"/>
+    <!-- smaller building -->
+    <rect x="186" y="360" width="40" height="400"/>
+    <!-- tapering toward center -->
+    <rect x="232" y="410" width="44" height="350"/>
+  </g>
+
+  <!-- lit windows on the foreground -->
+  <g fill="#f4f8ff" opacity="0.55">
+    <!-- tall slab grid -->
+    <g>
+      <rect x="10" y="210" width="6" height="8"/>
+      <rect x="22" y="210" width="6" height="8"/>
+      <rect x="34" y="210" width="6" height="8"/>
+      <rect x="46" y="210" width="6" height="8"/>
+      <rect x="10" y="234" width="6" height="8"/>
+      <rect x="34" y="234" width="6" height="8"/>
+      <rect x="22" y="258" width="6" height="8"/>
+      <rect x="46" y="258" width="6" height="8"/>
+      <rect x="10" y="296" width="6" height="8"/>
+      <rect x="34" y="296" width="6" height="8"/>
+      <rect x="22" y="320" width="6" height="8"/>
+      <rect x="46" y="320" width="6" height="8"/>
+    </g>
+    <!-- mid tower -->
+    <g>
+      <rect x="84"  y="288" width="6" height="8"/>
+      <rect x="100" y="288" width="6" height="8"/>
+      <rect x="114" y="288" width="6" height="8"/>
+      <rect x="84"  y="312" width="6" height="8"/>
+      <rect x="114" y="312" width="6" height="8"/>
+      <rect x="100" y="350" width="6" height="8"/>
+    </g>
+    <!-- midblock -->
+    <g>
+      <rect x="140" y="360" width="6" height="8"/>
+      <rect x="156" y="360" width="6" height="8"/>
+      <rect x="168" y="386" width="6" height="8"/>
+      <rect x="140" y="412" width="6" height="8"/>
+    </g>
+    <!-- small building -->
+    <g>
+      <rect x="194" y="396" width="6" height="8"/>
+      <rect x="210" y="396" width="6" height="8"/>
+      <rect x="194" y="420" width="6" height="8"/>
+    </g>
   </g>
 </svg>

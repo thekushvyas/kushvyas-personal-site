@@ -24,7 +24,9 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: linear-gradient(180deg, #f4f8ff 0%, #fbfcff 45%, #ffffff 75%);
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, #eaf2ff 0%, transparent 70%),
+    linear-gradient(180deg, #f4f8ff 0%, #fbfcff 50%, #ffffff 100%);
 }
 
 body::after {
@@ -33,23 +35,26 @@ body::after {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.34;
+  opacity: 0.5;
   background-image:
     url("/graphs.svg"),
+    url("/moon.svg"),
     url("/stars.svg"),
     url("/city-left.svg"),
     url("/city-right.svg");
   background-position:
     bottom center,
+    right 6vw top 4vh,
     top center,
     bottom left,
     bottom right;
   background-size:
     100% auto,
+    220px 220px,
     100% auto,
-    auto 52vh,
-    auto 52vh;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    auto 56vh,
+    auto 56vh;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
 }
 
 ::selection {

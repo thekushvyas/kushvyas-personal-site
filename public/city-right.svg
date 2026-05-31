@@ -1,28 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 720" preserveAspectRatio="xMaxYMax meet" width="320" height="720">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 760" preserveAspectRatio="xMaxYMax meet" width="360" height="760">
   <defs>
-    <linearGradient id="cr" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#aecaff"/>
-      <stop offset="1" stop-color="#5d86ec"/>
+    <linearGradient id="crBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c4d5f7" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#9bb6f0" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="crFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9eb9f3"/>
+      <stop offset="1" stop-color="#4d76e0"/>
     </linearGradient>
   </defs>
-  <g fill="url(#cr)">
-    <!-- tallest near the outer (right) edge, stepping down toward the center -->
-    <rect x="258" y="150" width="62" height="570"/>
-    <rect x="242" y="120" width="14" height="600"/>
-    <rect x="206" y="230" width="48" height="490"/>
-    <rect x="150" y="190" width="52" height="530"/>
-    <rect x="102" y="300" width="44" height="420"/>
-    <rect x="48"  y="260" width="50" height="460"/>
-    <rect x="0"   y="360" width="44" height="360"/>
+
+  <!-- Distant back skyline (mirrored) -->
+  <g fill="url(#crBack)">
+    <rect x="280" y="260" width="80" height="500"/>
+    <rect x="222" y="220" width="60" height="540"/>
+    <rect x="156" y="290" width="68" height="470"/>
+    <rect x="96"  y="250" width="64" height="510"/>
+    <rect x="36"  y="320" width="62" height="440"/>
+    <rect x="0"   y="290" width="40" height="470"/>
   </g>
-  <!-- a few lit windows -->
-  <g fill="#eaf2ff" opacity="0.6">
-    <rect x="298" y="190" width="8" height="10"/>
-    <rect x="278" y="190" width="8" height="10"/>
-    <rect x="298" y="240" width="8" height="10"/>
-    <rect x="278" y="240" width="8" height="10"/>
-    <rect x="166" y="230" width="8" height="10"/>
-    <rect x="184" y="230" width="8" height="10"/>
-    <rect x="72"  y="300" width="8" height="10"/>
+
+  <!-- Foreground (mirrored: tall slab on the outer-right edge) -->
+  <g fill="url(#crFront)">
+    <rect x="292" y="170" width="68" height="590"/>
+    <rect x="322" y="120" width="8"  height="60"/>
+    <rect x="234" y="250" width="52" height="510"/>
+    <polygon points="234,250 260,232 286,250"/>
+    <rect x="182" y="320" width="46" height="440"/>
+    <rect x="134" y="360" width="40" height="400"/>
+    <rect x="84"  y="410" width="44" height="350"/>
+  </g>
+
+  <!-- lit windows (mirrored) -->
+  <g fill="#f4f8ff" opacity="0.55">
+    <g>
+      <rect x="344" y="210" width="6" height="8"/>
+      <rect x="332" y="210" width="6" height="8"/>
+      <rect x="320" y="210" width="6" height="8"/>
+      <rect x="308" y="210" width="6" height="8"/>
+      <rect x="344" y="234" width="6" height="8"/>
+      <rect x="320" y="234" width="6" height="8"/>
+      <rect x="332" y="258" width="6" height="8"/>
+      <rect x="308" y="258" width="6" height="8"/>
+      <rect x="344" y="296" width="6" height="8"/>
+      <rect x="320" y="296" width="6" height="8"/>
+      <rect x="332" y="320" width="6" height="8"/>
+      <rect x="308" y="320" width="6" height="8"/>
+    </g>
+    <g>
+      <rect x="270" y="288" width="6" height="8"/>
+      <rect x="254" y="288" width="6" height="8"/>
+      <rect x="240" y="288" width="6" height="8"/>
+      <rect x="270" y="312" width="6" height="8"/>
+      <rect x="240" y="312" width="6" height="8"/>
+      <rect x="254" y="350" width="6" height="8"/>
+    </g>
+    <g>
+      <rect x="214" y="360" width="6" height="8"/>
+      <rect x="198" y="360" width="6" height="8"/>
+      <rect x="186" y="386" width="6" height="8"/>
+      <rect x="214" y="412" width="6" height="8"/>
+    </g>
+    <g>
+      <rect x="160" y="396" width="6" height="8"/>
+      <rect x="144" y="396" width="6" height="8"/>
+      <rect x="160" y="420" width="6" height="8"/>
+    </g>
   </g>
 </svg>

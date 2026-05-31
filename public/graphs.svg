@@ -1,37 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240" preserveAspectRatio="xMidYMax slice" width="1440" height="240">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMax slice" width="1440" height="280">
   <defs>
-    <linearGradient id="garea" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#7aa0ff" stop-opacity="0.45"/>
+    <linearGradient id="trendStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6f9bff"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="trendArea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7aa0ff" stop-opacity="0.55"/>
       <stop offset="1" stop-color="#7aa0ff" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="gbar" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#8fb0ff" stop-opacity="0.65"/>
-      <stop offset="1" stop-color="#8fb0ff" stop-opacity="0.1"/>
+    <linearGradient id="barFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8db1ff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#8db1ff" stop-opacity="0.1"/>
     </linearGradient>
+    <radialGradient id="pointHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#9cbcff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#9cbcff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="11" cy="11" r="0.9" fill="#9bb6f0" opacity="0.45"/>
+    </pattern>
+    <filter id="softGlow" x="-10%" y="-50%" width="120%" height="200%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
   </defs>
 
-  <!-- dashboard bars -->
-  <g fill="url(#gbar)">
-    <rect x="80"   y="150" width="30" height="90"  rx="3"/>
-    <rect x="124"  y="120" width="30" height="120" rx="3"/>
-    <rect x="168"  y="170" width="30" height="70"  rx="3"/>
-    <rect x="1242" y="135" width="30" height="105" rx="3"/>
-    <rect x="1286" y="110" width="30" height="130" rx="3"/>
-    <rect x="1330" y="160" width="30" height="80"  rx="3"/>
+  <!-- subtle dot grid in lower portion -->
+  <rect x="0" y="100" width="1440" height="180" fill="url(#dotGrid)"/>
+
+  <!-- baseline reference line, faint dashed -->
+  <line x1="0" y1="245" x2="1440" y2="245" stroke="#9bb6f0" stroke-opacity="0.35" stroke-dasharray="4 6"/>
+
+  <!-- dashboard bars (left + right clusters) -->
+  <g fill="url(#barFill)">
+    <rect x="80"   y="170" width="30" height="90"  rx="4"/>
+    <rect x="124"  y="138" width="30" height="122" rx="4"/>
+    <rect x="168"  y="190" width="30" height="70"  rx="4"/>
+    <rect x="1242" y="155" width="30" height="105" rx="4"/>
+    <rect x="1286" y="124" width="30" height="136" rx="4"/>
+    <rect x="1330" y="180" width="30" height="80"  rx="4"/>
   </g>
 
-  <!-- analytics trend line + area -->
-  <path d="M0,180 L120,150 L240,165 L360,120 L480,140 L600,95 L720,118 L840,72 L960,92 L1080,65 L1200,85 L1320,53 L1440,72 L1440,240 L0,240 Z"
-        fill="url(#garea)"/>
-  <polyline points="0,180 120,150 240,165 360,120 480,140 600,95 720,118 840,72 960,92 1080,65 1200,85 1320,53 1440,72"
-            fill="none" stroke="#3f72df" stroke-width="3" stroke-opacity="0.7"
-            stroke-linejoin="round" stroke-linecap="round"/>
-  <g fill="#2f63d6">
-    <circle cx="120"  cy="150" r="4"/>
-    <circle cx="360"  cy="120" r="4"/>
-    <circle cx="600"  cy="95"  r="4"/>
-    <circle cx="840"  cy="72"  r="4"/>
-    <circle cx="1080" cy="65"  r="4"/>
-    <circle cx="1320" cy="53"  r="4"/>
+  <!-- area under the trend -->
+  <path d="M0,210
+           C 120,210 200,180 300,178
+           S 460,160 580,158
+           S 760,128 880,118
+           S 1080,82 1220,80
+           S 1380,68 1440,70
+           L 1440,280 L 0,280 Z"
+        fill="url(#trendArea)"/>
+
+  <!-- glow underlay for the trend line -->
+  <path d="M0,210
+           C 120,210 200,180 300,178
+           S 460,160 580,158
+           S 760,128 880,118
+           S 1080,82 1220,80
+           S 1380,68 1440,70"
+        fill="none" stroke="#6f9bff" stroke-opacity="0.45" stroke-width="10"
+        stroke-linejoin="round" stroke-linecap="round" filter="url(#softGlow)"/>
+
+  <!-- the trend line itself -->
+  <path d="M0,210
+           C 120,210 200,180 300,178
+           S 460,160 580,158
+           S 760,128 880,118
+           S 1080,82 1220,80
+           S 1380,68 1440,70"
+        fill="none" stroke="url(#trendStroke)" stroke-width="3"
+        stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- data points with halos -->
+  <g>
+    <circle cx="300"  cy="178" r="14" fill="url(#pointHalo)"/>
+    <circle cx="580"  cy="158" r="14" fill="url(#pointHalo)"/>
+    <circle cx="880"  cy="118" r="14" fill="url(#pointHalo)"/>
+    <circle cx="1220" cy="80"  r="14" fill="url(#pointHalo)"/>
+  </g>
+  <g fill="#1d4ed8">
+    <circle cx="300"  cy="178" r="4"/>
+    <circle cx="580"  cy="158" r="4"/>
+    <circle cx="880"  cy="118" r="4"/>
+    <circle cx="1220" cy="80"  r="4"/>
   </g>
 </svg>
