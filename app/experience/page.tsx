@@ -16,11 +16,13 @@ export default function ExperiencePage() {
             <div>
               <div className="text-base font-medium text-black">{e.role}</div>
               <div className="text-sm text-black/60">{e.org}</div>
+              {e.bullets.length > 0 && (
               <ul className="mt-2 list-disc pl-5 text-[15px] leading-7 text-black/80 marker:text-blue-400">
                 {e.bullets.map((b) => (
                   <li key={b}>{b}</li>
                 ))}
               </ul>
+              )}
             </div>
           </li>
         ))}
