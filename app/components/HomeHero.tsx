@@ -151,7 +151,7 @@ export default function HomeHero() {
           <img
             src={PROFILE.photo}
             alt="Kush Vyas headshot"
-            className="h-64 w-48 rounded-[2rem] border-4 border-white object-cover shadow-2xl shadow-blue-900/20 md:h-[26rem] md:w-72"
+            className="h-auto w-60 rounded-[2rem] border-4 border-white shadow-2xl shadow-blue-900/20 md:w-80 lg:w-[24rem]"
           />
         </div>
       </div>
