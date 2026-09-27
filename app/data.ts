@@ -35,32 +35,30 @@ export const EXPERIENCE: {
   bullets: string[];
 }[] = [
   {
-    role: "Brand Management Intern",
-    org: "Microsoft · GroupMe",
-    period: "Jan 2025 — May 2025",
+    role: "Marketing and Data Management Intern",
+    org: "DaidaEx · New York, NY",
+    period: "Sep 2026 — Present",
+    bullets: [],
+  },
+  {
+    role: "Summer Analyst Intern (Data & Business Analytics)",
+    org: "Octos Global Solutions · Anaheim, CA",
+    period: "Jun 2026 — Aug 2026",
     bullets: [
-      "Managed creators, driving a 45% boost in campaign engagement and 35,000+ app downloads.",
-      "Handled event finances, ROI calculations, and modeled a payment algorithm for the program.",
-      "Promoted the app across 15+ university platforms, lifting new sign-ups 30% in two months.",
+      "Built an end-to-end lead generation and outreach automation tool from scratch, integrating the Apollo API with AI-drafted personalized outreach — generating 7,000+ leads/week and cutting manual outreach time by 80%.",
+      "Conducted competitive and market analysis for 15+ clients, delivering 3 Power BI dashboards and 4 pitch decks that helped secure 2 new client partnerships.",
+      "Developed a churn prediction model (75% accuracy) that flagged 120 at-risk accounts, helping retain 45 of them and protect ~$90K in revenue.",
+      "Ran pricing and elasticity analysis across 140+ client accounts, designing tiered pricing structures that lifted client revenue by 12%.",
     ],
   },
   {
-    role: "Data Analyst Intern",
-    org: "Octos Global · Remote (USA)",
-    period: "Jun 2024 — Aug 2024",
+    role: "Mentor",
+    org: "Data Decoders",
+    period: "Jun 2025 — Nov 2025",
     bullets: [
-      "Directed financial and competitor analysis across four verticals, surfacing six service gaps and three opportunities.",
-      "Built three real-time dashboards and two ML models that improved personalized engagement by 27%.",
-    ],
-  },
-  {
-    role: "Data Analyst Intern",
-    org: "Kunj Services · Ahmedabad, India",
-    period: "Jun 2023 — Aug 2023",
-    bullets: [
-      "Ran financial forecasting and market research to identify five profitable growth opportunities.",
-      "Built churn and pricing models that improved subscription renewal rates by 18%.",
-      "Created Power BI dashboards that cut reporting time by 25%.",
+      "Mentored 200+ students in an analytics and start-up community through curated workshops, portfolio reviews, and project-based learning.",
+      "Spearheaded partnerships with 8 startups and 10+ professionals to deliver real-world case challenges.",
+      "Oversaw event planning and coordination, boosting active participation and helping increase placement success by 30%.",
     ],
   },
   {
@@ -68,8 +66,68 @@ export const EXPERIENCE: {
     org: "Data Decoders · Pune, India",
     period: "Jul 2024 — Jun 2025",
     bullets: [
-      "Founded a 200+ student analytics community, running five workshops and mentorship programs.",
-      "Built partnerships with nine startups for hands-on projects, boosting placement success by 30%.",
+      "Founded and led a community of 200+ students focused on data analytics and industry collaboration.",
+      "Ran mentorship programs, workshops, and events with 10+ industry partners.",
+      "Led a team of 20+ members across project coordination, content, and events.",
+      "Managed operations and finances, implementing growth strategies that increased membership and participation by 40%.",
+    ],
+  },
+  {
+    role: "University Joint Secretary, Alumni Relations",
+    org: "MIT World Peace University · Pune, India",
+    period: "Oct 2024 — Jun 2025",
+    bullets: [
+      "Initiated alumni-led webinars, career talks, and networking events, driving a 40% increase in alumni-student engagement across two semesters.",
+      "Coordinated with 20+ alumni, faculty, and student teams to deliver career counseling sessions.",
+      "Supported the pilot of a structured mentorship program and applied opportunity analysis to close collaboration gaps.",
+    ],
+  },
+  {
+    role: "Company Relations Manager",
+    org: "The Venture, MIT-WPU · Pune, India",
+    period: "Jan 2025 — May 2025",
+    bullets: [
+      "Built partnerships with 10+ startups, founders, and industry professionals for speaker sessions, panels, and pitch events.",
+      "Acted as liaison between external partners and internal event teams, and secured sponsorships to grow the club's industry network.",
+    ],
+  },
+  {
+    role: "Head of Marketing",
+    org: "The Venture, MIT-WPU · Pune, India",
+    period: "Aug 2024 — Apr 2025",
+    bullets: [
+      "Led content and communications for a student startup council, reaching 1,000+ students through targeted social media campaigns.",
+      "Managed content calendars, event branding, and outreach for pitch competitions, speaker events, and startup showcases.",
+    ],
+  },
+  {
+    role: "Campus Ambassador",
+    org: "GroupMe · Pune, India",
+    period: "Jan 2025 — May 2025",
+    bullets: [
+      "Promoted GroupMe on campus through engagement initiatives, awareness drives, and partnerships with student clubs.",
+      "Launched mini digital campaigns and interactive demos that improved app visibility and user acquisition.",
+      "Shared student usage insights with the GroupMe team to refine positioning for college audiences.",
+    ],
+  },
+  {
+    role: "Data Analyst Intern",
+    org: "Octos Global Solutions · Remote (USA)",
+    period: "Jun 2024 — Aug 2024",
+    bullets: [
+      "Conducted business analysis for mobile app development, translating user requirements into actionable insights.",
+      "Coordinated timelines and documentation for 2 key app projects, improving delivery speed by 15%.",
+      "Supported market research and competitor benchmarking to shape pricing strategy and feature recommendations.",
+    ],
+  },
+  {
+    role: "Data Analyst Intern",
+    org: "Kunj Services Pvt. Ltd. · Ahmedabad, India",
+    period: "Jun 2023 — Jul 2023",
+    bullets: [
+      "Ran process analysis for a regional tile installation service to identify inefficiencies in service delivery.",
+      "Streamlined customer onboarding and communication workflows, cutting average response time by 20%.",
+      "Supported market research and competitor analysis in Excel and Google Sheets to inform business development.",
     ],
   },
 ];
