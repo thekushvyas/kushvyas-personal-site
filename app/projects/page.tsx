@@ -8,7 +8,7 @@ export default function ProjectsPage() {
     <Section
       label="Projects"
       title="Built to answer real questions"
-      intro="Supply chains, sports, valuation and cities — explored with Python, data, and a lot of curiosity."
+      intro="Marketing, supply chains, sports, valuation and cities — explored with Python, data, and a lot of curiosity."
     >
       <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
         {PROJECTS.map((p, i) => {
