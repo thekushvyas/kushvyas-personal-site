@@ -13,7 +13,7 @@ const config: Config = {
         mute: "#6e6e73", // secondary text
         cloud: "#f5f5f7", // section background
         hairline: "#d2d2d7",
-        apple: "#0071e3", // link / button blue
+        apple: "#2f55c8", // quiet accent blue
       },
       maxWidth: {
         page: "1024px",
