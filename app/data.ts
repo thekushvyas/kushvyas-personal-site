@@ -222,6 +222,18 @@ export const EDUCATION: {
     detail: "Pune, India · GPA 8.50",
     period: "Aug 2025",
   },
+  {
+    degree: "Higher Secondary (Grade 12) — Commerce",
+    school: "Anand Niketan Satellite Campus",
+    detail: "Ahmedabad, India · ISC Board",
+    period: "2022",
+  },
+  {
+    degree: "Secondary School (Grade 10) — Science",
+    school: "Anand Niketan Satellite Campus",
+    detail: "Ahmedabad, India · ICSE Board",
+    period: "2020",
+  },
 ];
 
 // Navigation order across the site.
