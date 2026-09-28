@@ -6,7 +6,7 @@ export const metadata = { title: "Education — Kush Vyas" };
 
 export default function EducationPage() {
   return (
-    <Section label="Education" meta={`${EDUCATION.length} degrees`}>
+    <Section label="Education" meta={`${EDUCATION.length} entries`}>
       <ol className="relative flex flex-col gap-6 pl-8 md:pl-0">
         <span
           aria-hidden
