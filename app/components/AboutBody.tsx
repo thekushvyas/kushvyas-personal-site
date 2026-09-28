@@ -10,7 +10,27 @@ export default function AboutBody() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const ctx = gsap.context(() => {
+      // About text lights up word by word as you scroll through it
+      if (!reduce) {
+        gsap.fromTo(
+          "[data-word]",
+          { opacity: 0.12 },
+          {
+            opacity: 1,
+            ease: "none",
+            stagger: 0.05,
+            scrollTrigger: {
+              trigger: "[data-about]",
+              start: "top 85%",
+              end: "bottom 72%",
+              scrub: 0.5,
+            },
+          }
+        );
+      }
+
       gsap.from("[data-reveal]", {
         y: 28,
         opacity: 0,
@@ -31,15 +51,20 @@ export default function AboutBody() {
     <section ref={wrapRef} className="py-16 md:py-24">
       <h2
         data-reveal
-        className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-blue-700"
+        className="mb-6 font-mono text-xs font-medium uppercase tracking-[0.2em] text-blue-700"
       >
         About
       </h2>
       <p
-        data-reveal
-        className="max-w-2xl text-[17px] leading-8 text-black/85 md:text-lg"
+        data-about
+        aria-label={PROFILE.about}
+        className="max-w-3xl text-xl font-medium leading-9 text-slate-900 md:text-2xl md:leading-[1.6]"
       >
-        {PROFILE.about}
+        {PROFILE.about.split(" ").map((w, i) => (
+          <span key={i} data-word aria-hidden className="inline-block">
+            {w}&nbsp;
+          </span>
+        ))}
       </p>
 
       <div data-reveal className="mt-10">
