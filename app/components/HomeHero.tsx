@@ -5,12 +5,21 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PROFILE } from "../data";
+import { useReveal } from "./useReveal";
+
+const STATS = [
+  { label: "Outreach pipeline", value: 7000, suffix: "+", text: "leads a week, from a tool I built at Octos — 80% less manual work.", accent: true },
+  { label: "Churn model", prefix: "$", value: 90, suffix: "K", text: "revenue protected by flagging at-risk accounts (75% accuracy)." },
+  { label: "Data Decoders", value: 200, suffix: "+", text: "students mentored in the analytics community I founded." },
+  { label: "Research", value: 3, suffix: "", text: "published papers on consumer analytics and data." },
+];
 
 export default function HomeHero() {
   const sectionRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const photoWrapRef = useRef<HTMLDivElement>(null);
   const photoRef = useRef<HTMLDivElement>(null);
+  useReveal(sectionRef);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -49,7 +58,7 @@ export default function HomeHero() {
       // product-style reveal: photo grows into place
       gsap.fromTo(
         photoRef.current,
-        { scale: 0.86 },
+        { scale: 0.94 },
         {
           scale: 1,
           ease: "none",
@@ -117,12 +126,44 @@ export default function HomeHero() {
         </div>
       </div>
 
-      <div ref={photoWrapRef} className="mx-auto mt-16 w-full max-w-[440px] px-5 pb-8 md:mt-20">
+      {/* photo + stat stack side by side */}
+      <div
+        ref={photoWrapRef}
+        className="mx-auto mt-16 grid w-full max-w-page grid-cols-1 gap-5 px-5 pb-8 md:mt-20 md:grid-cols-[minmax(0,400px)_1fr] md:items-stretch"
+      >
         <div
           ref={photoRef}
-          className="overflow-hidden rounded-[20px] border border-black/[0.08] bg-white p-2 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]"
+          className="mx-auto w-full max-w-[400px] self-start overflow-hidden rounded-[20px] border border-black/[0.08] bg-white p-2 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]"
         >
           <img src={PROFILE.photo} alt="Kush Vyas" className="block h-auto w-full rounded-[14px]" />
+        </div>
+
+        <div className="flex flex-col gap-4 text-left">
+          {STATS.map((st) => (
+            <div
+              key={st.label}
+              data-item
+              className="card flex flex-1 items-center gap-6 px-7 py-6 md:px-8"
+            >
+              <p
+                className={[
+                  "w-[42%] shrink-0 font-light leading-none tracking-[-0.04em]",
+                  st.accent ? "text-apple" : "text-ink",
+                ].join(" ")}
+                style={{ fontSize: "clamp(40px, 5vw, 60px)" }}
+              >
+                {st.prefix}
+                <span data-count={st.value}>{st.value.toLocaleString()}</span>
+                {st.suffix}
+              </p>
+              <div className="min-w-0">
+                <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-mute">
+                  {st.label}
+                </p>
+                <p className="mt-1.5 text-[15px] leading-[1.45] text-ink/80">{st.text}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
