@@ -16,14 +16,14 @@ export default function EducationPage() {
             key={ed.degree}
             data-item
             className={[
-              "flex flex-col rounded-[28px] bg-white p-8 md:p-10",
+              "flex flex-col card p-8 md:p-10",
               i === 0 ? "md:col-span-2" : "",
             ].join(" ")}
           >
-            <p className="text-[14px] font-semibold text-mute">{ed.period}</p>
+            <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-mute">{ed.period}</p>
             <h2
               className={[
-                "mt-3 font-semibold leading-[1.1] tracking-[-0.025em] text-ink",
+                "mt-3 font-medium leading-[1.1] tracking-[-0.025em] text-ink",
                 i === 0 ? "text-[32px] md:text-[48px]" : "text-[24px] md:text-[28px]",
               ].join(" ")}
             >
