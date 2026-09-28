@@ -5,14 +5,18 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)"],
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       colors: {
-        ink: "#111111",
-        muted: "#6b7280",
-        line: "#e5e7eb",
-        accent: "#2563eb",
+        ink: "#1d1d1f", // primary text
+        mute: "#6e6e73", // secondary text
+        cloud: "#f5f5f7", // section background
+        hairline: "#d2d2d7",
+        apple: "#0071e3", // link / button blue
+      },
+      maxWidth: {
+        page: "1024px",
       },
     },
   },
