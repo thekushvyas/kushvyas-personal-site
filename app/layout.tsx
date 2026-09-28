@@ -4,6 +4,7 @@ import "./globals.css";
 import { PROFILE, NAV } from "./data";
 import Nav from "./components/Nav";
 import SmoothScroll from "./components/SmoothScroll";
+import BostonBackdrop from "./components/BostonBackdrop";
 
 export const metadata: Metadata = {
   title: "Kush Vyas — MSBA @ Boston University",
@@ -20,9 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans antialiased">
         <SmoothScroll />
+        <BostonBackdrop />
 
         {/* Apple-style frosted global nav */}
-        <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-[rgba(251,251,253,0.8)] backdrop-blur-xl backdrop-saturate-150">
+        <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-[#fbfbf9]/80 backdrop-blur-xl backdrop-saturate-150">
           <div className="mx-auto flex h-12 w-full max-w-page items-center justify-between gap-6 px-5">
             <Link
               href="/"
@@ -34,9 +36,9 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main>{children}</main>
+        <main className="relative z-[1]">{children}</main>
 
-        <footer className="bg-cloud">
+        <footer className="relative z-[1] border-t border-black/[0.06] bg-[#fbfbf9]/90">
           <div className="mx-auto w-full max-w-page px-5 py-8 text-[12px] leading-5 text-mute">
             <nav className="flex flex-wrap gap-x-6 gap-y-2 border-b border-hairline pb-4">
               {NAV.map((n) => (
@@ -58,7 +60,7 @@ export default function RootLayout({
               <span>
                 Copyright © {new Date().getFullYear()} {PROFILE.name}. All rights reserved.
               </span>
-              <span>{PROFILE.location}</span>
+              <span className="tracking-wide">42.3601° N, 71.0589° W — Boston</span>
             </div>
           </div>
         </footer>
