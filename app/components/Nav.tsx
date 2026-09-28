@@ -8,21 +8,17 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-wrap gap-x-1 gap-y-1">
+    <nav className="no-scrollbar -mr-2 flex min-w-0 items-center gap-1 overflow-x-auto md:gap-3">
       {NAV.map((item) => {
         const active =
-          item.href === "/"
-            ? pathname === "/"
-            : pathname.startsWith(item.href);
+          item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
         return (
           <Link
             key={item.href}
             href={item.href}
             className={[
-              "rounded-full px-3 py-1.5 text-sm transition-colors",
-              active
-                ? "bg-blue-600 text-white"
-                : "text-blue-900/70 hover:bg-blue-50 hover:text-blue-700",
+              "whitespace-nowrap px-2 py-1 text-[12px] transition-colors",
+              active ? "text-ink" : "text-ink/60 hover:text-ink",
             ].join(" ")}
           >
             {item.label}
