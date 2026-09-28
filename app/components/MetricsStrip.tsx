@@ -4,8 +4,6 @@ import { useRef } from "react";
 import Link from "next/link";
 import { useReveal } from "./useReveal";
 
-const tile = "card p-8 md:p-10";
-
 export default function MetricsStrip() {
   const ref = useRef<HTMLElement>(null);
   useReveal(ref);
@@ -32,17 +30,10 @@ export default function MetricsStrip() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-6 md:gap-5">
-          <div data-item className={`${tile} flex items-center gap-6 md:col-span-2`}>
-            <img src="/lego.png" alt="Kush as a LEGO minifigure" className="h-28 w-auto" />
-            <p className="text-[21px] font-semibold leading-[1.2] tracking-tight text-ink">
-              Also available in <span className="text-gradient">LEGO.</span>
-            </p>
-          </div>
-
           {/* dark feature tile */}
           <div
             data-item
-            className="relative overflow-hidden rounded-[20px] bg-ink p-8 text-white md:col-span-4 md:p-12"
+            className="relative overflow-hidden rounded-[20px] bg-ink p-8 text-white md:col-span-6 md:p-12"
           >
             <div aria-hidden className="glow glow-blue -right-20 -top-40 h-[380px] w-[520px] opacity-70" />
             <div className="relative flex flex-col justify-between gap-6 md:flex-row md:items-end">
