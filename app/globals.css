@@ -65,3 +65,47 @@ body::after {
 a {
   text-underline-offset: 4px;
 }
+
+/* cursor-following spotlight for cards marked data-spot */
+[data-spot] {
+  position: relative;
+  isolation: isolate;
+}
+[data-spot]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    360px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(59, 130, 246, 0.14),
+    transparent 60%
+  );
+}
+[data-spot]:hover::before {
+  opacity: 1;
+}
+
+/* HUD corner brackets that snap in on hover (use inside a .group) */
+.hud-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #2563eb;
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.group:hover .hud-corner {
+  opacity: 1;
+}
+.hud-tl { top: 10px; left: 10px; border-top-width: 2px; border-left-width: 2px; }
+.hud-tr { top: 10px; right: 10px; border-top-width: 2px; border-right-width: 2px; }
+.hud-bl { bottom: 10px; left: 10px; border-bottom-width: 2px; border-left-width: 2px; }
+.hud-br { bottom: 10px; right: 10px; border-bottom-width: 2px; border-right-width: 2px; }
+.group:hover .hud-tl { top: 6px; left: 6px; }
+.group:hover .hud-tr { top: 6px; right: 6px; }
+.group:hover .hud-bl { bottom: 6px; left: 6px; }
+.group:hover .hud-br { bottom: 6px; right: 6px; }
