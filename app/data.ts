@@ -139,6 +139,13 @@ export const PROJECTS: {
   tags: string[];
 }[] = [
   {
+    title: "Marketing Mix Modeling — Where Should the Next Ad Dollar Go?",
+    blurb:
+      "Built a from-scratch MMM with adstock carry-over and Hill saturation across TV, Search, Social, Display and Email (2.4% holdout MAPE), then re-allocated the same budget with a constrained optimizer for +$460K/yr in modeled incremental sales — validated against ground truth.",
+    href: "https://github.com/thekushvyas/marketing-mix-modeling",
+    tags: ["Python", "Marketing Analytics", "Optimization"],
+  },
+  {
     title: "Global Semiconductor Supply Chains — Trade Flows, Risks & Resilience",
     blurb:
       "Mapped global trade flows, regional dependencies, and supply-chain vulnerabilities across economies, identifying key chokepoints and market–finance linkages shaping resilience.",
