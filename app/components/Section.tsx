@@ -40,21 +40,25 @@ export default function Section({
           <div className="glow glow-blue -top-40 left-[10%] h-[420px] w-[620px]" />
           <div className="glow glow-violet -top-24 right-[5%] h-[360px] w-[520px]" />
         </div>
-        <div className="mx-auto w-full max-w-page px-5 pb-14 pt-20 md:pb-20 md:pt-28">
-          <p data-head className="text-[17px] font-semibold md:text-[21px]">
-            <span className="text-gradient">{label}</span>
+        <div className="mx-auto w-full max-w-page px-5 pb-12 pt-20 md:pb-16 md:pt-28">
+          <p
+            data-head
+            className="flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.2em] text-mute"
+          >
+            <span className="h-px w-8 bg-ink/30" />
+            {label}
           </p>
           <h1
             data-head
-            className="mt-3 font-semibold leading-[1.03] tracking-[-0.035em] text-ink"
-            style={{ fontSize: "clamp(48px, 8vw, 96px)" }}
+            className="mt-5 font-medium leading-[1.05] tracking-[-0.03em] text-ink"
+            style={{ fontSize: "clamp(40px, 6.5vw, 76px)" }}
           >
             {title ?? label}.
           </h1>
           {intro && (
             <p
               data-head
-              className="mt-6 max-w-2xl text-[19px] leading-[1.45] text-mute md:text-[24px] md:leading-[1.35]"
+              className="mt-6 max-w-2xl text-[18px] leading-[1.55] text-mute md:text-[20px]"
             >
               {intro}
             </p>
@@ -62,7 +66,7 @@ export default function Section({
         </div>
       </section>
 
-      <section className="bg-cloud py-14 md:py-20">
+      <section className="pb-20 md:pb-28">
         <div className="mx-auto w-full max-w-page px-5">{children}</div>
       </section>
     </div>
