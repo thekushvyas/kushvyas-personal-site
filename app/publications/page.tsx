@@ -15,15 +15,15 @@ export default function PublicationsPage() {
           <li
             key={pub.title}
             data-item
-            className="grid grid-cols-1 gap-4 rounded-[28px] bg-white p-8 md:grid-cols-[160px_1fr] md:gap-10 md:p-10"
+            className="grid grid-cols-1 gap-4 card p-8 md:grid-cols-[160px_1fr] md:gap-10 md:p-10"
           >
             {pub.year && (
-              <p className="text-[48px] font-semibold leading-none tracking-[-0.04em] md:text-[56px]">
+              <p className="text-[40px] font-light leading-none tracking-[-0.03em] md:text-[48px]">
                 <span className="text-gradient">{pub.year}</span>
               </p>
             )}
             <div>
-              <h2 className="text-[24px] font-semibold leading-[1.2] tracking-[-0.02em] text-ink md:text-[28px]">
+              <h2 className="text-[24px] font-medium leading-[1.2] tracking-[-0.02em] text-ink md:text-[28px]">
                 {pub.title}
               </h2>
               {pub.venue && <p className="mt-2 text-[17px] text-mute">{pub.venue}</p>}
