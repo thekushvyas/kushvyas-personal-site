@@ -4,6 +4,7 @@ import "./globals.css";
 import { PROFILE } from "./data";
 import Nav from "./components/Nav";
 import SmoothScroll from "./components/SmoothScroll";
+import ScrollProgress from "./components/ScrollProgress";
 
 export const metadata: Metadata = {
   title: "Kush Vyas — MSBA @ Boston University",
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans text-black antialiased">
         <SmoothScroll />
+        <ScrollProgress />
 
         {/* Floating top bar — minimal KV mark + nav */}
         <header className="sticky top-0 z-50 backdrop-blur-md">
