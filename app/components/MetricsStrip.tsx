@@ -4,23 +4,29 @@ import { useRef } from "react";
 import Link from "next/link";
 import { useReveal } from "./useReveal";
 
-const tile = "rounded-[28px] bg-white p-8 md:p-10";
+const tile = "card p-8 md:p-10";
 
 export default function MetricsStrip() {
   const ref = useRef<HTMLElement>(null);
   useReveal(ref);
 
   return (
-    <section ref={ref} className="bg-cloud py-20 md:py-28">
+    <section ref={ref} className="py-20 md:py-28">
       <div className="mx-auto w-full max-w-page px-5">
         <div data-item className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
-          <h2
-            className="font-semibold leading-[1.05] tracking-[-0.035em] text-ink"
-            style={{ fontSize: "clamp(40px, 6vw, 64px)" }}
-          >
-            Highlights.
-          </h2>
-          <Link href="/experience" className="text-[17px] text-apple hover:underline">
+          <div>
+            <p className="flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.2em] text-mute">
+              <span className="h-px w-8 bg-ink/30" />
+              01 — Highlights
+            </p>
+            <h2
+              className="mt-4 font-medium leading-[1.05] tracking-[-0.03em] text-ink"
+              style={{ fontSize: "clamp(34px, 5vw, 56px)" }}
+            >
+              Selected impact.
+            </h2>
+          </div>
+          <Link href="/experience" className="text-[15px] text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">
             See all experience ›
           </Link>
         </div>
@@ -28,9 +34,9 @@ export default function MetricsStrip() {
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-6 md:gap-5">
           {/* headline stat */}
           <div data-item className={`${tile} md:col-span-4`}>
-            <p className="text-[14px] font-semibold text-mute">Octos Global Solutions</p>
+            <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-mute">Octos Global Solutions</p>
             <p
-              className="mt-4 font-semibold leading-none tracking-[-0.045em]"
+              className="mt-4 font-light leading-none tracking-[-0.045em]"
               style={{ fontSize: "clamp(64px, 10vw, 120px)" }}
             >
               <span className="text-gradient">
@@ -44,8 +50,8 @@ export default function MetricsStrip() {
           </div>
 
           <div data-item className={`${tile} md:col-span-2`}>
-            <p className="text-[14px] font-semibold text-mute">Churn model</p>
-            <p className="mt-4 text-[56px] font-semibold leading-none tracking-[-0.04em] text-ink md:text-[64px]">
+            <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-mute">Churn model</p>
+            <p className="mt-4 text-[52px] font-light leading-none tracking-[-0.04em] text-ink md:text-[60px]">
               $<span data-count="90">90</span>K
             </p>
             <p className="mt-4 text-[17px] leading-[1.45] text-mute">
@@ -54,8 +60,8 @@ export default function MetricsStrip() {
           </div>
 
           <div data-item className={`${tile} md:col-span-2`}>
-            <p className="text-[14px] font-semibold text-mute">Data Decoders</p>
-            <p className="mt-4 text-[56px] font-semibold leading-none tracking-[-0.04em] text-ink md:text-[64px]">
+            <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-mute">Data Decoders</p>
+            <p className="mt-4 text-[52px] font-light leading-none tracking-[-0.04em] text-ink md:text-[60px]">
               <span data-count="200">200</span>+
             </p>
             <p className="mt-4 text-[17px] leading-[1.45] text-mute">
@@ -64,8 +70,8 @@ export default function MetricsStrip() {
           </div>
 
           <div data-item className={`${tile} md:col-span-2`}>
-            <p className="text-[14px] font-semibold text-mute">Research</p>
-            <p className="mt-4 text-[56px] font-semibold leading-none tracking-[-0.04em] text-ink md:text-[64px]">
+            <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-mute">Research</p>
+            <p className="mt-4 text-[52px] font-light leading-none tracking-[-0.04em] text-ink md:text-[60px]">
               <span data-count="3">3</span>
             </p>
             <p className="mt-4 text-[17px] leading-[1.45] text-mute">
@@ -86,14 +92,14 @@ export default function MetricsStrip() {
           {/* dark feature tile */}
           <div
             data-item
-            className="relative overflow-hidden rounded-[28px] bg-black p-8 text-white md:col-span-6 md:p-12"
+            className="relative overflow-hidden rounded-[20px] bg-ink p-8 text-white md:col-span-6 md:p-12"
           >
             <div aria-hidden className="glow glow-blue -right-20 -top-40 h-[380px] w-[520px] opacity-70" />
             <div className="relative flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
-                <p className="text-[14px] font-semibold text-white/60">Now</p>
+                <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-white/50">Now</p>
                 <p
-                  className="mt-3 font-semibold leading-[1.08] tracking-[-0.03em]"
+                  className="mt-3 font-medium leading-[1.08] tracking-[-0.03em]"
                   style={{ fontSize: "clamp(30px, 4vw, 48px)" }}
                 >
                   Marketing & Data Management Intern
