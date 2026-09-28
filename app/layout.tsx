@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
-import { PROFILE } from "./data";
+import { PROFILE, NAV } from "./data";
 import Nav from "./components/Nav";
 import SmoothScroll from "./components/SmoothScroll";
-import ScrollProgress from "./components/ScrollProgress";
 
 export const metadata: Metadata = {
   title: "Kush Vyas — MSBA @ Boston University",
@@ -19,32 +18,50 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans text-black antialiased">
+      <body className="font-sans antialiased">
         <SmoothScroll />
-        <ScrollProgress />
 
-        {/* Floating top bar — minimal KV mark + nav */}
-        <header className="sticky top-0 z-50 backdrop-blur-md">
-          <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-4">
+        {/* Apple-style frosted global nav */}
+        <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-[rgba(251,251,253,0.8)] backdrop-blur-xl backdrop-saturate-150">
+          <div className="mx-auto flex h-12 w-full max-w-page items-center justify-between gap-6 px-5">
             <Link
               href="/"
-              aria-label="Home"
-              className="grid h-9 w-9 place-items-center rounded-full bg-blue-600 text-sm font-semibold text-white shadow-md hover:bg-blue-700"
+              className="shrink-0 text-[15px] font-semibold tracking-tight text-ink"
             >
-              KV
+              Kush Vyas
             </Link>
             <Nav />
           </div>
         </header>
 
-        <div className="mx-auto w-full max-w-5xl px-6">
-          <main className="min-h-[60vh]">{children}</main>
+        <main>{children}</main>
 
-          <footer className="mt-16 border-t border-blue-100 py-6 text-xs text-black/50">
-            © {new Date().getFullYear()} {PROFILE.name}. Built with Next.js,
-            deployed on Vercel.
-          </footer>
-        </div>
+        <footer className="bg-cloud">
+          <div className="mx-auto w-full max-w-page px-5 py-8 text-[12px] leading-5 text-mute">
+            <nav className="flex flex-wrap gap-x-6 gap-y-2 border-b border-hairline pb-4">
+              {NAV.map((n) => (
+                <Link key={n.href} href={n.href} className="hover:text-ink hover:underline">
+                  {n.label}
+                </Link>
+              ))}
+              <a href={`mailto:${PROFILE.email}`} className="hover:text-ink hover:underline">
+                Email
+              </a>
+              <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="hover:text-ink hover:underline">
+                LinkedIn
+              </a>
+              <a href={PROFILE.github} target="_blank" rel="noreferrer" className="hover:text-ink hover:underline">
+                GitHub
+              </a>
+            </nav>
+            <div className="flex flex-col justify-between gap-2 pt-4 md:flex-row">
+              <span>
+                Copyright © {new Date().getFullYear()} {PROFILE.name}. All rights reserved.
+              </span>
+              <span>{PROFILE.location}</span>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
