@@ -15,11 +15,11 @@ export default function ExperiencePage() {
           <li
             key={e.role + e.org + e.period}
             data-item
-            className="grid grid-cols-1 gap-3 rounded-[28px] bg-white p-8 md:grid-cols-[200px_1fr] md:gap-10 md:p-10"
+            className="grid grid-cols-1 gap-3 card p-8 md:grid-cols-[200px_1fr] md:gap-10 md:p-10"
           >
-            <p className="text-[14px] font-semibold text-mute md:pt-1.5">{e.period}</p>
+            <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-mute md:pt-1.5">{e.period}</p>
             <div>
-              <h2 className="text-[24px] font-semibold leading-tight tracking-[-0.02em] text-ink md:text-[28px]">
+              <h2 className="text-[24px] font-medium leading-tight tracking-[-0.02em] text-ink md:text-[28px]">
                 {e.role}
               </h2>
               <p className="mt-1 text-[17px] text-mute">{e.org}</p>
