@@ -1,45 +1,47 @@
 import Section from "../components/Section";
-import Hud from "../components/Hud";
 import { PROJECTS } from "../data";
 
 export const metadata = { title: "Projects — Kush Vyas" };
 
 export default function ProjectsPage() {
   return (
-    <Section label="Projects" meta={`${PROJECTS.length} repos`}>
-      <ul className="grid grid-cols-1 gap-5 md:grid-cols-2">
+    <Section
+      label="Projects"
+      title="Built to answer real questions"
+      intro="Supply chains, sports, valuation and cities — explored with Python, data, and a lot of curiosity."
+    >
+      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
         {PROJECTS.map((p, i) => {
+          const featured = i === 0;
           const Tag = p.href ? "a" : "div";
           return (
-            <li key={p.title} data-item>
+            <li key={p.title} data-item className={featured ? "md:col-span-2" : ""}>
               <Tag
                 {...(p.href ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
-                data-spot
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-blue-100 bg-white/60 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10"
+                className="group flex h-full flex-col rounded-[28px] bg-white p-8 transition-all duration-500 hover:scale-[1.01] hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] md:p-10"
               >
-                <Hud />
-                <div className="flex items-center justify-between font-mono text-[11px] tracking-[0.18em] text-blue-500">
-                  <span>PRJ_{String(i + 1).padStart(2, "0")}</span>
-                  {p.href && (
-                    <span className="text-base text-blue-600 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-                      ↗
-                    </span>
-                  )}
-                </div>
-                <h3 className="mt-4 text-xl font-semibold leading-snug tracking-tight text-slate-900 group-hover:text-blue-700">
+                <p className="text-[14px] font-semibold text-mute">{p.tags.join(" · ")}</p>
+                <h2
+                  className={[
+                    "mt-3 font-semibold leading-[1.1] tracking-[-0.025em] text-ink",
+                    featured ? "text-[32px] md:text-[48px]" : "text-[26px] md:text-[32px]",
+                  ].join(" ")}
+                >
                   {p.title}
-                </h3>
-                <p className="mt-2 flex-1 text-[15px] leading-7 text-slate-600">{p.blurb}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {p.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-blue-200 bg-blue-50/60 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-blue-700"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+                </h2>
+                <p
+                  className={[
+                    "mt-4 flex-1 leading-[1.5] text-mute",
+                    featured ? "max-w-3xl text-[19px] md:text-[21px]" : "text-[17px]",
+                  ].join(" ")}
+                >
+                  {p.blurb}
+                </p>
+                {p.href && (
+                  <span className="mt-6 text-[17px] text-apple group-hover:underline">
+                    View on GitHub ›
+                  </span>
+                )}
               </Tag>
             </li>
           );
