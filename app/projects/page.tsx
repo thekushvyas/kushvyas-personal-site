@@ -18,12 +18,12 @@ export default function ProjectsPage() {
             <li key={p.title} data-item className={featured ? "md:col-span-2" : ""}>
               <Tag
                 {...(p.href ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
-                className="group flex h-full flex-col rounded-[28px] bg-white p-8 transition-all duration-500 hover:scale-[1.01] hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] md:p-10"
+                className="group flex h-full flex-col card p-8 transition-all duration-500 hover:-translate-y-0.5 hover:border-black/20 md:p-10"
               >
-                <p className="text-[14px] font-semibold text-mute">{p.tags.join(" · ")}</p>
+                <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-mute">{p.tags.join(" · ")}</p>
                 <h2
                   className={[
-                    "mt-3 font-semibold leading-[1.1] tracking-[-0.025em] text-ink",
+                    "mt-3 font-medium leading-[1.1] tracking-[-0.025em] text-ink",
                     featured ? "text-[32px] md:text-[48px]" : "text-[26px] md:text-[32px]",
                   ].join(" ")}
                 >
