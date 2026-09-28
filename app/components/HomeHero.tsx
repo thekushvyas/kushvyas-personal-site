@@ -131,11 +131,24 @@ export default function HomeHero() {
         ref={photoWrapRef}
         className="mx-auto mt-16 grid w-full max-w-page grid-cols-1 gap-5 px-5 pb-8 md:mt-20 md:grid-cols-[minmax(0,400px)_1fr] md:items-stretch"
       >
-        <div
-          ref={photoRef}
-          className="mx-auto w-full max-w-[400px] self-start overflow-hidden rounded-[20px] border border-black/[0.08] bg-white p-2 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]"
-        >
-          <img src={PROFILE.photo} alt="Kush Vyas" className="block h-auto w-full rounded-[14px]" />
+        {/* left column: photo + LEGO companion */}
+        <div className="mx-auto flex w-full max-w-[400px] flex-col gap-4">
+          <div
+            ref={photoRef}
+            className="overflow-hidden rounded-[20px] border border-black/[0.08] bg-white p-2 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]"
+          >
+            <img
+              src={PROFILE.photo}
+              alt="Kush Vyas"
+              className="block aspect-[4/5] h-auto w-full rounded-[14px] object-cover object-top"
+            />
+          </div>
+          <div data-item className="card flex items-center gap-5 px-6 py-4">
+            <img src="/lego.png" alt="Kush as a LEGO minifigure" className="h-20 w-auto" />
+            <p className="text-[18px] font-medium leading-[1.25] tracking-tight text-ink">
+              Also available in <span className="text-gradient">LEGO.</span>
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-col gap-4 text-left">
