@@ -1,50 +1,42 @@
 import Section from "../components/Section";
-import Hud from "../components/Hud";
 import { PUBLICATIONS } from "../data";
 
 export const metadata = { title: "Publications — Kush Vyas" };
 
 export default function PublicationsPage() {
   return (
-    <Section label="Publications" meta={`${PUBLICATIONS.length} papers`}>
-      <ol className="flex flex-col gap-5">
-        {PUBLICATIONS.map((pub, i) => (
-          <li key={pub.title} data-item>
-            <div
-              data-spot
-              className="group grid grid-cols-1 gap-4 rounded-2xl border border-blue-100 bg-white/60 p-6 backdrop-blur transition-colors hover:border-blue-300 md:grid-cols-[120px_1fr] md:gap-8"
-            >
-              <Hud />
-              <div className="font-mono">
-                <div className="text-[11px] tracking-[0.18em] text-blue-400">
-                  PUB_{String(i + 1).padStart(2, "0")}
-                </div>
-                {pub.year && (
-                  <div className="mt-1 text-4xl font-semibold tracking-tight text-slate-900">
-                    {pub.year}
-                  </div>
-                )}
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold leading-snug tracking-tight text-slate-900">
-                  {pub.title}
-                </h3>
-                {pub.venue && (
-                  <div className="mt-2 font-mono text-xs tracking-wide text-slate-500">
-                    {pub.venue}
-                  </div>
-                )}
-                {pub.href && (
-                  <a
-                    href={pub.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 rounded-full border border-blue-200 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-blue-700 transition-colors hover:border-blue-600 hover:bg-blue-600 hover:text-white"
-                  >
-                    Read on ResearchGate <span aria-hidden>↗</span>
-                  </a>
-                )}
-              </div>
+    <Section
+      label="Publications"
+      title="Research, published"
+      intro="Peer-reviewed work on business analytics, consumer behaviour and the future of data management."
+    >
+      <ol className="flex flex-col gap-4 md:gap-5">
+        {PUBLICATIONS.map((pub) => (
+          <li
+            key={pub.title}
+            data-item
+            className="grid grid-cols-1 gap-4 rounded-[28px] bg-white p-8 md:grid-cols-[160px_1fr] md:gap-10 md:p-10"
+          >
+            {pub.year && (
+              <p className="text-[48px] font-semibold leading-none tracking-[-0.04em] md:text-[56px]">
+                <span className="text-gradient">{pub.year}</span>
+              </p>
+            )}
+            <div>
+              <h2 className="text-[24px] font-semibold leading-[1.2] tracking-[-0.02em] text-ink md:text-[28px]">
+                {pub.title}
+              </h2>
+              {pub.venue && <p className="mt-2 text-[17px] text-mute">{pub.venue}</p>}
+              {pub.href && (
+                <a
+                  href={pub.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 inline-block text-[17px] text-apple hover:underline"
+                >
+                  Read the paper ›
+                </a>
+              )}
             </div>
           </li>
         ))}
