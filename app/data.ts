@@ -12,7 +12,7 @@ export const PROFILE = {
     "Curious mind, strategic thinker, data translator. I’m pursuing my M.S. in Business Analytics at Boston University’s Questrom School of Business, where I work at the intersection of data and decision-making. With experience in CRM strategy, market research, and published work in consumer analytics, I help uncover the patterns that drive smarter business moves — whether that means building dashboards or framing insights for stakeholders. I care about impact, not just output.",
   email: "kushvyas@bu.edu",
   github: "https://github.com/kushvyas-111",
-  linkedin: "https://www.linkedin.com/in/kush-vyas-090396279",
+  linkedin: "https://www.linkedin.com/in/thekushvyas",
   // Place your photo at: public/profile.png  (or change the path below)
   photo: "/profile.png",
 };
@@ -36,8 +36,14 @@ export const EXPERIENCE: {
 }[] = [
   {
     role: "Marketing and Data Management Intern",
-    org: "DaidaEx · New York, NY",
+    org: "Global Futures Group · New York, NY",
     period: "Sep 2026 — Present",
+    bullets: [],
+  },
+  {
+    role: "Admissions Ambassador",
+    org: "Questrom School of Business, Boston University · Boston, MA",
+    period: "Oct 2025 — Present",
     bullets: [],
   },
   {
@@ -98,16 +104,36 @@ export const EXPERIENCE: {
     bullets: [
       "Led content and communications for a student startup council, reaching 1,000+ students through targeted social media campaigns.",
       "Managed content calendars, event branding, and outreach for pitch competitions, speaker events, and startup showcases.",
+      "Strengthened the club's digital presence by aligning messaging with its mission to promote innovation, student engagement, and entrepreneurial thinking.",
     ],
   },
   {
-    role: "Campus Ambassador",
-    org: "GroupMe · Pune, India",
+    role: "Marketing Team",
+    org: "The Venture, MIT-WPU · Pune, India",
+    period: "2024 — Aug 2024",
+    bullets: [
+      "Spearheaded marketing strategy for a student-led entrepreneurial council, driving a 40% increase in event participation through targeted social media campaigns and campus outreach.",
+      "Oversaw content planning and brand positioning across digital channels, enhancing visibility among 1,500+ students and early-stage campus startups.",
+    ],
+  },
+  {
+    role: "Brand Management Intern",
+    org: "Microsoft (GroupMe) · Pune, India",
     period: "Jan 2025 — May 2025",
     bullets: [
       "Promoted GroupMe on campus through engagement initiatives, awareness drives, and partnerships with student clubs.",
       "Launched mini digital campaigns and interactive demos that improved app visibility and user acquisition.",
       "Shared student usage insights with the GroupMe team to refine positioning for college audiences.",
+    ],
+  },
+  {
+    role: "Member, Student Alumni Relations Society",
+    org: "MIT World Peace University · Pune, India",
+    period: "Aug 2024 — Oct 2024",
+    bullets: [
+      "Supported planning and coordination of alumni-student engagement initiatives, including webinar logistics, outreach communications, and guest confirmations.",
+      "Helped organize career counseling sessions and networking forums with senior team members.",
+      "Contributed to content drafting and data collection for alumni events.",
     ],
   },
   {
@@ -227,7 +253,13 @@ export const EDUCATION: {
     degree: "B.B.A. in Business Analytics",
     school: "MIT World Peace University",
     detail: "Pune, India · GPA 8.50",
-    period: "Aug 2025",
+    period: "Jul 2022 — May 2025",
+  },
+  {
+    degree: "National Academic Immersion Program — Business Administration, Management & Entrepreneurship",
+    school: "Mahindra University",
+    detail: "Hyderabad, India",
+    period: "Feb 2024 — Mar 2024",
   },
   {
     degree: "Higher Secondary (Grade 12) — Commerce",
