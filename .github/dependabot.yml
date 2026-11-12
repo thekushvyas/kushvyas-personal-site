@@ -6,3 +6,7 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+    # Skip major-version jumps (they can break the site); security fixes still come through.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
