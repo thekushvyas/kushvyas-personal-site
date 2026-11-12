@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
  *   data-item   → soft fade-up as it enters the viewport
  *   data-count  → number eases up from 0 when visible (optional data-prefix / data-suffix live in markup)
  */
-export function useReveal(scope: RefObject<HTMLElement>) {
+export function useReveal(scope: RefObject<HTMLElement | null>) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
