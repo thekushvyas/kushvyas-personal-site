@@ -45,7 +45,7 @@ export default function MetricsStrip() {
                 >
                   Marketing & Data Management Intern
                   <br />
-                  <span className="text-white/55">at DaidaEx, New York.</span>
+                  <span className="text-white/55">at Global Futures Group, New York.</span>
                 </p>
               </div>
               <Link
