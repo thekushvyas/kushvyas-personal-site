@@ -13,14 +13,17 @@ export default function ProjectsPage() {
       <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
         {PROJECTS.map((p, i) => {
           const featured = i === 0;
-          const Tag = p.href ? "a" : "div";
+          const Tag = p.href && !p.demo ? "a" : "div";
           return (
             <li key={p.title} data-item className={featured ? "md:col-span-2" : ""}>
               <Tag
-                {...(p.href ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
+                {...(p.href && !p.demo ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
                 className="group flex h-full flex-col card p-8 transition-all duration-500 hover:-translate-y-0.5 hover:border-black/20 md:p-10"
               >
-                <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-mute">{p.tags.join(" · ")}</p>
+                <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-mute">
+                  {featured && <span className="mr-3 rounded-full bg-ink px-2.5 py-1 text-white">Flagship</span>}
+                  {p.tags.join(" · ")}
+                </p>
                 <h2
                   className={[
                     "mt-3 font-medium leading-[1.1] tracking-[-0.025em] text-ink",
@@ -37,9 +40,19 @@ export default function ProjectsPage() {
                 >
                   {p.blurb}
                 </p>
-                {p.href && (
+                {p.href && !p.demo && (
                   <span className="mt-6 text-[17px] text-apple group-hover:underline">
                     View on GitHub ›
+                  </span>
+                )}
+                {p.href && p.demo && (
+                  <span className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-[17px] text-apple">
+                    <a href={p.demo} target="_blank" rel="noreferrer" className="hover:underline">
+                      Open live dashboard ›
+                    </a>
+                    <a href={p.href} target="_blank" rel="noreferrer" className="hover:underline">
+                      View on GitHub ›
+                    </a>
                   </span>
                 )}
               </Tag>

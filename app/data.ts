@@ -162,8 +162,17 @@ export const PROJECTS: {
   title: string;
   blurb: string;
   href?: string;
+  demo?: string;
   tags: string[];
 }[] = [
+  {
+    title: "Commerce Intelligence Platform — Marketplace Analytics, End to End",
+    blurb:
+      "A full analytics stack on 99K Olist marketplace orders and 8K seller leads: a dbt + DuckDB star schema with 59 tests, cohort / RFM / CLV analysis, a delivery→review driver model (8+ days late = 19× the odds of a 1–2 star review), a checkout-time late-delivery risk model (AUC ≈ 0.74), seller-acquisition funnel economics, a forecast backtest and sized A/B tests — exported for Tableau and Power BI, with a live interactive dashboard.",
+    href: "https://github.com/thekushvyas/commerce-intelligence-platform",
+    demo: "https://thekushvyas.github.io/commerce-intelligence-platform/",
+    tags: ["dbt · DuckDB · SQL", "Python · ML", "Tableau · Power BI"],
+  },
   {
     title: "Marketing Mix Modeling — Where Should the Next Ad Dollar Go?",
     blurb:
