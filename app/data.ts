@@ -172,6 +172,62 @@ export const PROJECTS: {
     tags: ["Python", "Marketing Analytics", "Optimization"],
   },
   {
+    title: "Marketplace Commercial Analytics — Olist",
+    blurb:
+      "Rebuilt a two-sided marketplace KPI layer in SQL (DuckDB) on ~99K orders: GMV +141% YoY, a 3.0% buyer repeat rate, top 10% of sellers = 67% of GMV, and late deliveries cutting review scores from 4.28 to 2.35 — condensed into a six-metric board view.",
+    href: "https://github.com/thekushvyas/olist-marketplace-analytics",
+    tags: ["SQL", "DuckDB", "Marketplace KPIs"],
+  },
+  {
+    title: "Email Campaign Lift Test & Uplift Targeting",
+    blurb:
+      "Measured a randomized email test on 64K customers: +7.7 pp visits and +$0.77 spend per customer (1.7× ROI), planned sample sizes for the next test, and built an uplift model whose top 30% captures ~50% of incremental visits.",
+    href: "https://github.com/thekushvyas/email-campaign-lift-measurement",
+    tags: ["A/B Testing", "Power Analysis", "Uplift Modeling"],
+  },
+  {
+    title: "Grocery Promo Post-Event Analysis & Price Audit",
+    blurb:
+      "Analysed 2,709 weekly-mailer events on dunnhumby Complete Journey data: +213% unit lift, ~10% pull-forward, no measurable cannibalization, category elasticities from −0.9 to −1.8, a keep/change/drop scorecard and a private-label price-gap audit.",
+    href: "https://github.com/thekushvyas/grocery-promo-pricing-analytics",
+    tags: ["Python", "Pricing", "Promotions"],
+  },
+  {
+    title: "Demand Forecasting & Inventory Policy",
+    blurb:
+      "Backtested four weekly forecasting methods across the top 8 Olist categories (~26.5% WAPE), set safety stock and reorder points for a 95% service level, and showed that moving to 99% service needs 41% more stock.",
+    href: "https://github.com/thekushvyas/demand-forecast-inventory-policy",
+    tags: ["Forecasting", "Supply Chain", "Inventory"],
+  },
+  {
+    title: "Retail Analytics Warehouse — dbt + DuckDB",
+    blurb:
+      "Built a star-schema warehouse (staging → dimensions → facts → KPI and retention marts) on 1.47M grocery transactions with 24 automated dbt data tests — which caught products missing from the product master.",
+    href: "https://github.com/thekushvyas/retail-analytics-warehouse-dbt",
+    tags: ["dbt", "SQL", "Data Engineering"],
+  },
+  {
+    title: "Medicare Claims Data Onboarding",
+    blurb:
+      "Onboarded CMS synthetic Medicare claims (857K claims): auto-generated data dictionary, validation checks and a client issue log that caught corrupted claim IDs, then a cost and utilization report (PMPM, admits per 1,000, 23% readmissions).",
+    href: "https://github.com/thekushvyas/medicare-claims-data-onboarding",
+    tags: ["Healthcare", "Data Quality", "SQL"],
+  },
+  {
+    title: "U.S. Hurricane Catastrophe Loss Model",
+    blurb:
+      "Frequency–severity cat model on NOAA HURDAT2 landfalls (1900–2025) with an Emanuel damage curve and 100,000 simulated years: AAL, OEP/AEP curves and 1-in-100 / 1-in-250 PMLs for an illustrative $100B portfolio, plus sensitivity tests.",
+    href: "https://github.com/thekushvyas/hurricane-cat-loss-model",
+    tags: ["Monte Carlo", "Insurance", "Risk"],
+  },
+  {
+    title: "Used-Car Pricing vs. CarMax & Carvana — Alt-Data Note",
+    blurb:
+      "Research note combining the BLS used-car price index (FRED) with SEC XBRL filings: used prices still +29% vs 2019, and Carvana's quarterly revenue reaching ~102% of CarMax's at roughly twice the gross margin.",
+    href: "https://github.com/thekushvyas/used-car-alt-data-research",
+    tags: ["Equity Research", "Alt Data", "Python"],
+  },
+  {
     title: "Global Semiconductor Supply Chains — Trade Flows, Risks & Resilience",
     blurb:
       "Mapped global trade flows, regional dependencies, and supply-chain vulnerabilities across economies, identifying key chokepoints and market–finance linkages shaping resilience.",
